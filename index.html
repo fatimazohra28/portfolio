@@ -36,9 +36,62 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+
+#cont {
+    position: relative; /* Ensures .slider is positioned correctly */
+    width: 100vw; /* Full width of the viewport */
+    height: 500px;
+    overflow: hidden;
+}
+
+.slider {
+    position: absolute; /* Positioned inside #cont */
+    z-index: 2; /* Ensures it's above other elements */
+    width: 100vw; /* Full width of the viewport */
+    display: flex;
+    gap: 5px; /* Space between items */
+    transition: transform 0.5s ease-in-out;
+}
+
+.item {
+    flex: 0 0 auto;
+    width: 190px; /* Adjust as needed */
+    height: 190px;
+    
+    background-position: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Adjust positioning of each item */
+.item:nth-child(1) { transform: translateX(-150%); opacity: 0; }
+.item:nth-child(2) { transform: translateX(-40%); }
+.item:nth-child(3) { transform: translateX(70%); }
+.item:nth-child(4) { transform: translateX(180%); }
+.item:nth-child(5) { transform: translateX(290%); }
+.item:nth-child(6) { transform: translateX(400%); }
+.item:nth-child(7) { transform: translateX(490%); }
+.item:nth-child(8) { transform: translateX(580%); }
+.item:nth-child(9) { transform: translateX(670%); }
+.item:nth-child(10) { transform: translateX(760%); }
+.item:nth-child(11) { transform: translateX(850%); }
+.item:nth-child(12) { transform: translateX(940%); opacity: 0; }
+
+.buttons {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#contact i{
+    color: rgb(207, 68, 18);
+    margin-inline-end: 16px;
+}
+
     </style>
 </head>
-<body class="bg-gray-100 relative w-full h-screen overflow-hidden">
+<body class="bg-gray-950 relative w-full h-screen overflow-hidden animate__animated animate__backInLeft">
     <!-- Hero Section with Video Background -->
     <section id="home" class="relative w-full h-screen overflow-hidden">
         <!-- Video Background -->
@@ -58,11 +111,11 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 font-serif tracking-[.25em] text-lg bg-gray-500/10 px-10 p-2 rounded-lg">
-                    <a href="#" class="hover:text-gray-400 hover:border-b">Home</a>
+                    <a href="#home" class="hover:text-gray-400 hover:border-b">Home</a>
                     <a href="#about" class="hover:text-gray-400 hover:border-b">About</a>
                     <a href="#skills" class="hover:text-gray-400 hover:border-b">Skills</a>
                     <a href="#projects" class="hover:text-gray-400 hover:border-b">Projects</a>
-                    <a href="#" class="text-orange-600 hover:text-gray-400 hover:border-b">Contact</a>
+                    <a href="#contact" class="text-orange-600 hover:text-gray-400 hover:border-b">Contact</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -75,11 +128,11 @@
 
             <!-- Mobile Menu -->
             <div id="menu" class="hidden md:hidden flex flex-col space-y-2 text-center pb-4">
-                <a href="#" class="block p-2 hover:bg-gray-700">Home</a>
+                <a href="#home" class="block p-2 hover:bg-gray-700">Home</a>
                 <a href="#about" class="block p-2 hover:bg-gray-700">About</a>
                 <a href="#skills" class="block p-2 hover:bg-gray-700">Skills</a>
                 <a href="#projects" class="block p-2 hover:bg-gray-700">Projects</a>
-                <a href="#" class="block p-2 hover:bg-gray-700">Contact</a>
+                <a href="#contact" class="block p-2 hover:bg-gray-700">Contact</a>
             </div>
         </nav>
 
@@ -112,13 +165,13 @@
     <section id="about" class="relative bg-black text-white py-20 overflow-hidden">
         <div class="container mx-auto text-center px-6 md:px-20">
             <!-- Title -->
-            <h1 class="text-4xl font-bold mb-10 animate__animated animate__heartBeat">About <span class="text-orange-600">Me</span></h1>
+            <h1 class="text-4xl font-bold mb-10 animate__animated animate__heartBeat underline">About <span class="text-orange-600">Me</span></h1>
     
             <!-- Content Wrapper -->
             <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
                 <!-- Profile Image -->
                 <div class="relative flex justify-center">
-                    <div class="w-80 h-80 rounded-full bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl animate__animated animate__shakeX">
+                    <div class="w-80 h-80 rounded-full bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
                         <img src="./src/image/170337524628.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
                     </div>
                 </div>
@@ -153,18 +206,102 @@
             <div class="w-full bg-orange-600 mx-auto text-center py-6 relative z-10">
                 <p class=" text-white font-serif mb-4">For more details about my skills and experience, view my CV here:</p>
                 <a href="./src/cv2024.pdf" target="_blank" 
-                    class="inline-block px-16 py-3 bg-gray-800 hover:bg-gray-900  rounded-full text-white font-medium shadow-lg text-lg">
+                    class="inline-block px-16 py-3 bg-gray-800 hover:bg-gray-900   rounded-full text-white font-medium shadow-lg text-lg">
                     📄 Download CV
                 </a>
             </div>
         </div>
     </section>
+<!--skills-->
+<section id="skills" class=" h-full p-12">
+    <h1 class="text-4xl font-bold mb-10 underline decoration-solid text-center text-orange-600">Skills</h1>
+
+    <!-- Skills Container -->
+    <div id="cont" class=" bg-gray-950   py-32 shadow-md  shadow-orange-700  ">
+    <div id="slider" class="slider flex ">
+        
+            <!-- Skill Item 1 -->
+            <div  class="item rounded-full 
+ bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
+                <img src="./src/image/HTML-5-Badge-Logo.png" class=" bg-center w-full h-full object-cover rounded-full" alt="Profile Image">
+            </div>
+
+            <!-- Skill Item 2 -->
+            <div  class="item rounded-full bg-center
+ bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
+                <img src="./src/image/JS2.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
+            </div>
+
+            <!-- Skill Item 3 -->
+            <div  class="item  rounded-full bg-center
+  bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
+                <img src="./src/image/css (2).png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
+            </div>
+
+            <!-- Skill Item 4 -->
+            <div  class="item rounded-full bg-center
+ bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
+                <img src="./src/image/laravel.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
+            </div>
+
+            <!-- Skill Item 5 -->
+            <div  class="item rounded-full bg-center
+ bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
+                <img src="./src/image/MYSQL.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
+            </div>
+
+            <!-- Skill 6 -->
+            <div  class="item rounded-full bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
+                <img src="./src/image/react.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
+            </div>
+          <!-- Skill Item 7 -->
+          <div  class="item rounded-full 
+          bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
+                         <img src="./src/image/Capture d’écran 2025-02-20 201705.png" class=" bg-centerw-full h-full object-cover rounded-full" alt="Profile Image">
+                     </div>
+         
+                     <!-- Skill Item 8 -->
+                     <div  class="item rounded-full bg-center
+          bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
+                         <img src="./src/image/gitt.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
+                     </div>
+         
+                     <!-- Skill Item 9 -->
+                     <div  class="item  rounded-full bg-center
+           bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
+                         <img src="./src/image/Capture d’écran 2025-02-20 201906.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
+                     </div>
+         
+                     <!-- Skill Item 10 -->
+                     <div  class="item rounded-full bg-center
+          bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
+                         <img src="./src/image/PYTHON.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
+                     </div>
+         
+                     <!-- Skill Item 11 -->
+                     <div  class="item rounded-full bg-center
+          bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
+                         <img src="./src/image/microsoft.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
+                     </div>
+         
+                     <!-- Skill 12 -->
+                     <div  class="item rounded-full bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
+                         <img src="./src/image/Capture d’écran 2025-02-20 210223.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
+                     </div>
+    </div>
+    <div class="buttons text-white text-center text-4xl  p-20 ">
+        <button id="prev"><i class="bi bi-arrow-left-circle mx-12 hover:text-orange-600"></i></button>
+        <button id="next"><i class="bi bi-arrow-right-circle mx-12 hover:text-orange-600"></i></button>
+
+       </div></div>
+</section>
+<!--projects-->
     <section id="projects" class="p-20 bg-slate-950">
         <h1 class="text-4xl font-bold mb-10 underline text-center animate__animated animate__heartBeat text-orange-600">Projects</h1>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 place-items-center animate__animated animate__backInUp">
             <!-- Project Card -->
-            <div class="w-64 rounded-lg my-8 overflow-hidden shadow-lg shadow-amber-700  cursor-pointer project-container relative">
+            <div class="w-64 rounded-lg my-8 overflow-hidden shadow-lg shadow-slate-600  cursor-pointer project-container relative">
                 <img class="w-full h-40 object-cover" src="./src/image/Capture d’écran 2025-02-21 224013.png" alt="FIND_JOB">
                 <h2 class="text-gray-500 text-center py-2 bg-gray-900">FIND_JOB</h2>
                 <div class="project-text absolute inset-0 bg-black bg-opacity-80 text-white flex flex-col items-center justify-center text-sm opacity-0 transform translate-y-full transition-all duration-200">
@@ -175,64 +312,84 @@
                     </p>
                 </div>
             </div>
-            <div class="w-64 rounded-lg overflow-hidden shadow-lg shadow-amber-700 cursor-pointer project-container relative">
-                <img class="w-full h-40 object-cover" src="./src/image/Capture d’écran 2025-02-21 224013.png" alt="FIND_JOB">
-                <h2 class="text-gray-500 text-center py-2 bg-gray-900">FIND_JOB</h2>
+            <div class="w-64 rounded-lg overflow-hidden shadow-lg shadow-slate-600 cursor-pointer project-container relative">
+                <img class="w-full h-40 object-cover" src="./src/image/Capture d’écran 2025-02-21 224523.png" alt="E-Commerce Platform and Phones">
+                <h2 class="text-gray-500 text-center py-2 bg-gray-900">E-Commerce Platform and Phones</h2>
                 <div class="project-text absolute inset-0 bg-black bg-opacity-80 text-white flex flex-col items-center justify-center text-sm opacity-0 transform translate-y-full transition-all duration-300">
                     <p class="px-4 text-center">
-                        <b>Backend:</b> Laravel (API Resource) <br>
-                        <b>Frontend:</b> React.js, HTML, CSS <br>
-                        <b>Database:</b> MySQL
+                        Design and development of an e-commerce platform dedicated to the sale of mobile phones and related accessories Technologies.
+                        use : HTML, CSS, JavaScript, reactjs
                     </p>
                 </div>
             </div>
-            <div class="w-64 rounded-lg overflow-hidden shadow-lg shadow-amber-700 cursor-pointer project-container relative">
-                <img class="w-full h-40 object-cover" src="./src/image/Capture d’écran 2025-02-21 224013.png" alt="FIND_JOB">
-                <h2 class="text-gray-500 text-center py-2 bg-gray-900">FIND_JOB</h2>
+            <div class="w-64 rounded-lg overflow-hidden shadow-lg shadow-slate-600 cursor-pointer project-container relative">
+                <img class="w-full h-40 object-cover" src="./src/image/Capture d’écran 2025-02-20 215007.png" alt="FIND_JOB">
+                <h2 class="text-gray-500 text-center py-2 bg-gray-900">Calculator</h2>
                 <div class="project-text absolute inset-0 bg-black bg-opacity-80 text-white flex flex-col items-center justify-center text-sm opacity-0 transform translate-y-full transition-all duration-300">
                     <p class="px-4 text-center">
-                        <b>Backend:</b> Laravel (API Resource) <br>
-                        <b>Frontend:</b> React.js, HTML, CSS <br>
-                        <b>Database:</b> MySQL
+                        html + css +javascript
                     </p>
                 </div>
             </div>
-            <div class="w-64 rounded-lg overflow-hidden shadow-lg shadow-amber-700 cursor-pointer project-container relative">
-                <img class="w-full h-40 object-cover" src="./src/image/Capture d’écran 2025-02-21 224013.png" alt="FIND_JOB">
-                <h2 class="text-gray-500 text-center py-2 bg-gray-900">FIND_JOB</h2>
+            <div class="w-64 rounded-lg overflow-hidden shadow-lg shadow-slate-600 cursor-pointer project-container relative">
+                <img class="w-full h-40 object-cover" src="./src/image/Capture d’écran 2025-02-22 230031.png" alt="FIND_JOB">
+                <h2 class="text-gray-500 text-center py-2 bg-gray-900">START-BOOTSTRAP</h2>
                 <div class="project-text absolute inset-0 bg-black bg-opacity-80 text-white flex flex-col items-center justify-center text-sm opacity-0 transform translate-y-full transition-all duration-300">
                     <p class="px-4 text-center">
-                        <b>Backend:</b> Laravel (API Resource) <br>
-                        <b>Frontend:</b> React.js, HTML, CSS <br>
-                        <b>Database:</b> MySQL
+                        html + css +bootstrap
                     </p>
                 </div>
             </div>
-            <div class="w-64 rounded-lg overflow-hidden shadow-lg shadow-amber-700 cursor-pointer project-container relative">
-                <img class="w-full h-40 object-cover" src="./src/image/Capture d’écran 2025-02-21 224013.png" alt="FIND_JOB">
-                <h2 class="text-gray-500 text-center py-2 bg-gray-900">FIND_JOB</h2>
+            <div class="w-64 rounded-lg overflow-hidden shadow-lg shadow-slate-600 cursor-pointer project-container relative">
+                <img class="w-full h-40 object-cover" src="./src/image/portfol.png" alt="FIND_JOB">
+                <h2 class="text-gray-500 text-center py-2 bg-gray-900">PORTFOLIO</h2>
                 <div class="project-text absolute inset-0 bg-black bg-opacity-80 text-white flex flex-col items-center justify-center text-sm opacity-0 transform translate-y-full transition-all duration-300">
                     <p class="px-4 text-center">
-                        <b>Backend:</b> Laravel (API Resource) <br>
-                        <b>Frontend:</b> React.js, HTML, CSS <br>
-                        <b>Database:</b> MySQL
+                        html + css +Tailwind
                     </p>
                 </div>
             </div>
-            <div class="w-64 rounded-lg overflow-hidden shadow-lg shadow-amber-700 cursor-pointer project-container relative">
-                <img class="w-full h-40 object-cover" src="./src/image/Capture d’écran 2025-02-21 224013.png" alt="FIND_JOB">
-                <h2 class="text-gray-500 text-center py-2 bg-gray-900">FIND_JOB</h2>
+            <div class="w-64 rounded-lg overflow-hidden shadow-lg shadow-slate-600 cursor-pointer project-container relative">
+                <img class="w-full h-40 object-cover" src="./src/image/digiw.png" alt="FIND_JOB">
+                <h2 class="text-gray-500 text-center py-2 bg-gray-900">DIGIWEARIT</h2>
                 <div class="project-text absolute inset-0 bg-black bg-opacity-80 text-white flex flex-col items-center justify-center text-sm opacity-0 transform translate-y-full transition-all duration-300">
                     <p class="px-4 text-center">
-                        <b>Backend:</b> Laravel (API Resource) <br>
-                        <b>Frontend:</b> React.js, HTML, CSS <br>
-                        <b>Database:</b> MySQL
-                    </p>
+                        html + css +bootstrap
                 </div>
             </div>
         </div>
+        <br><br>
         
-        
+    </section>
+    
+    <section id="contact" class="bg-slate-950 p-20 flex justify-center">
+        <div class="shadow-lg shadow-gray-500 p-14 rounded-lg w-full max-w-3xl bg-white animate__animated animate__shakeX  ">
+            <h1 class="text-4xl font-bold mb-2 underline text-center animate__animated animate__heartBeat text-orange-600">Contact</h1>
+            <p class="text-center text-gray-500 mb-16">Do not hesitate to contact me.</p>
+            
+            <form>
+                <div class="flex flex-col md:flex-row gap-8 text-xl text-gray-800">
+                    <div class="flex flex-col flex-1">
+                        <label class="my-2 flex items-center"><i class="bi bi-person-fill mr-2"></i>Name:</label>
+                        <input type="text" placeholder="Enter your name" class="border border-gray-300 p-2 rounded w-full placeholder-gray-400">
+    
+                        <label class="my-2 flex items-center mt-4"><i class="bi bi-at mr-2"></i>Email:</label>
+                        <input type="email" placeholder="Enter your email" class="border border-gray-300 p-2 rounded w-full placeholder-gray-400">
+                    </div>
+    
+                    <div class="flex-1">
+                        <label class="my-2 flex items-center"><i class="bi bi-chat-dots-fill mr-2"></i>Message:</label>
+                        <textarea placeholder="Enter your message" class="border border-gray-300 p-2 rounded w-full h-28 placeholder-gray-400"></textarea>
+                    </div>
+                </div>
+    
+                <div class="text-center mt-6">
+                    <button class="bg-orange-600 text-white font-bold px-6 py-2 rounded-lg hover:bg-orange-700 transition">
+                        Send
+                    </button>
+                </div>
+            </form>
+        </div>
     </section>
     
     
@@ -264,6 +421,29 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+
+
+//next
+  document.getElementById("next").onclick = function () {
+var items=document.querySelectorAll(".item");
+
+    document.getElementById("slider").appendChild(items[0]);
+  };
+  //prev
+  document.getElementById("prev").onclick = function () {
+var items=document.querySelectorAll(".item");
+
+    document.getElementById("slider").prepend(items[items.length-1]);
+  };
+//styleposition items
+
+
+
+  
+
+
+
 
 
 
