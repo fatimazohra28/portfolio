@@ -21,6 +21,8 @@
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
     <style>
         .project-container {
@@ -40,42 +42,43 @@
 
 #cont {
     position: relative; /* Ensures .slider is positioned correctly */
-    width: 100vw; /* Full width of the viewport */
+     /* Full width of the viewport */
     height: 500px;
     overflow: hidden;
+    
+   
 }
 
 .slider {
     position: absolute; /* Positioned inside #cont */
-    z-index: 2; /* Ensures it's above other elements */
-    width: 100vw; /* Full width of the viewport */
-    display: flex;
-    gap: 5px; /* Space between items */
+    z-index: 2; 
+    
+    gap: 0px; /* Space between items */
     transition: transform 0.5s ease-in-out;
 }
 
 .item {
     flex: 0 0 auto;
-    width: 190px; /* Adjust as needed */
-    height: 190px;
+    width: 160px; /* Adjust as needed */
+    height: 160px;
     
     background-position: center;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* Adjust positioning of each item */
-.item:nth-child(1) { transform: translateX(-150%); opacity: 0; }
-.item:nth-child(2) { transform: translateX(-40%); }
-.item:nth-child(3) { transform: translateX(70%); }
-.item:nth-child(4) { transform: translateX(180%); }
-.item:nth-child(5) { transform: translateX(290%); }
-.item:nth-child(6) { transform: translateX(400%); }
-.item:nth-child(7) { transform: translateX(490%); }
-.item:nth-child(8) { transform: translateX(580%); }
-.item:nth-child(9) { transform: translateX(670%); }
-.item:nth-child(10) { transform: translateX(760%); }
-.item:nth-child(11) { transform: translateX(850%); }
-.item:nth-child(12) { transform: translateX(940%); opacity: 0; }
+.item:nth-child(1) { transform: translateX(-15%);opacity: 0.2; }
+.item:nth-child(2) { transform: translateX(0%); }
+.item:nth-child(3) { transform: translateX(15%);width: 170px; height:170px}
+.item:nth-child(4) { transform: translateX(30%);width: 200px; height: 200px; }
+.item:nth-child(5) { transform: translateX(50%);width: 170px; height:170px}
+.item:nth-child(6) { transform: translateX(70%);}
+.item:nth-child(7) { transform: translateX(90%); opacity: 0.2;}
+.item:nth-child(8) { transform: translateX(110%); opacity: 0;}
+.item:nth-child(9) { transform: translateX(130%); opacity: 0;}
+.item:nth-child(10) { transform: translateX(150%); opacity: 0;}
+.item:nth-child(11) { transform: translateX(170%);opacity: 0;}
+.item:nth-child(12) { transform: translateX(190%); opacity: 0; }
 
 .buttons {
     position: absolute;
@@ -88,12 +91,32 @@
     color: rgb(207, 68, 18);
     margin-inline-end: 16px;
 }
+.nimate-delay {
+    animation-delay: 2s; /* Delays animation by 4 seconds */
+}
+/* Typing animation */
 
+.flulls{
+    font-family: "Courier New", Courier, monospace;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.1em solid white;
+    animation: fulls 4s steps(30) 4s 1 normal both;
+}
+@keyframes fulls {
+    0% {
+        width: 2px;
+    }
+    100% {
+        width: 100%;
+    }
+}
     </style>
 </head>
-<body class="bg-gray-950 relative w-full h-screen overflow-hidden animate__animated animate__backInLeft">
+<body class="  ">
     <!-- Hero Section with Video Background -->
-    <section id="home" class="relative w-full h-screen overflow-hidden">
+    <section id="home" class="relative w-full h-screen overflow-hidden animate__animated animate__bounceInLeft animate__slow">
         <!-- Video Background -->
         <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover">
             <source src="./src/video/219749_small.mp4" type="video/mp4">
@@ -138,21 +161,21 @@
 
         <!--  Content -->
         <div class="flex relative z-10 text-white">
-            <div class="w-3/6 text-center p-40 animate__animated animate__backInLeft">
-                <h1 class="text-3xl font-serif">Hi, I'm <span class="font-bold text-orange-600">Fatimazohra Zelmati</span></h1>
-                <h2 class="text-orange-600 mb-10 mt-6 text-xl tracking-[.25em]">Fullstack Developer</h2>
+            <div class="w-3/6 text-center p-40 animate__animated animate__backInLeft nimate-delay">
+                <h1 class="text-3xl font-serif">Hi, I'm <span class="font-bold text-orange-600 ">Fatimazohra Zelmati</span></h1>
+                <h2 class="text-orange-600 mb-10 mt-6 text-xl tracking-[.25em] flulls">Fullstack Developer</h2>
                 <p>I craft clean, responsive, and interactive web experiences using<br>
                     modern technologies. Explore my work and let’s collaborate.</p>
                 <p class="mt-20 animate-bounce">
-                    <i class="bi bi-arrow-down-circle font-bold text-6xl text-orange-600"></i>
+                    <a href="#about"><i class="bi bi-arrow-down-circle font-bold text-6xl text-orange-600"></i></a>
                 </p>
             </div>
 
-            <div class="w-2/6 pt-12 animate__animated animate__backInRight">
+            <div class="w-2/6 pt-12 animate__animated animate__backInRight animate__slow nimate-delay">
                 <img src="./src/image/1703375246286-removebg-preview.png" class="mt-6 p-1 rounded-full">
             </div>
 
-            <div class="flex flex-col space-y-4 mt-40 text-3xl  animate__animated animate__backInRight text-gray-600">
+            <div class="flex flex-col space-y-4 mt-40 text-3xl  animate__animated animate__backInRight animate__slow text-gray-600">
                 <i class="bi bi-github hover:text-gray-800"></i>
                 <i class="bi bi-linkedin hover:text-blue-500"></i>
                 <i class="bi bi-facebook hover:text-blue-800"></i>
@@ -162,16 +185,19 @@
     </section>
 
     <!-- About Section (Black Background) -->
-    <section id="about" class="relative bg-black text-white py-20 overflow-hidden">
+    <section id="about" class="relative bg-black text-white py-16 overflow-hidden">
         <div class="container mx-auto text-center px-6 md:px-20">
             <!-- Title -->
-            <h1 class="text-4xl font-bold mb-10 animate__animated animate__heartBeat underline">About <span class="text-orange-600">Me</span></h1>
-    
+           <h1 class="text-4xl font-bold mb-10 underline animate__animated animate__bounceIn" 
+    data-aos="fade-up" data-aos-duration="1000">
+    About <span class="text-orange-600">Me</span>
+</h1>
+ 
             <!-- Content Wrapper -->
             <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
                 <!-- Profile Image -->
-                <div class="relative flex justify-center">
-                    <div class="w-80 h-80 rounded-full bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
+                <div class="relative flex justify-center" data-aos="zoom-in" data-aos-duration="1500">
+                    <div class="w-80 h-80 rounded-full bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl">
                         <img src="./src/image/170337524628.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
                     </div>
                 </div>
@@ -197,33 +223,31 @@
         </div>
     
         <!-- Stylish CV Download Section -->
-        <div class="relative mt-20">
-            <!-- Wave Effect -->
-            <svg class="absolute top-0 left-0 w-full h-20 -mt-10" viewBox="0 0 1440 320">
-                <path fill="#EA580C" fill-opacity="1" d="M0,256L60,234.7C120,213,240,171,360,160C480,149,600,171,720,192C840,213,960,235,1080,229.3C1200,224,1320,192,1380,176L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-            </svg>
-    
-            <div class="w-full bg-orange-600 mx-auto text-center py-6 relative z-10">
-                <p class=" text-white font-serif mb-4">For more details about my skills and experience, view my CV here:</p>
+        <div class="flex justify-center items-center mt-9 bg-black">
+            <div class="text-center text-white">
+                <h2 class="text-4xl font-semibold mb-6">For more details about my skills and experience</h2>
+                <p class="text-xl mb-6">Click below to view my CV:</p>
+        
                 <a href="./src/cv2024.pdf" target="_blank" 
-                    class="inline-block px-16 py-3 bg-gray-800 hover:bg-gray-900   rounded-full text-white font-medium shadow-lg text-lg">
+                    class="inline-block px-16 py-3 bg-orange-600 hover:bg-gray-900 rounded-full text-white font-medium shadow-lg text-lg ">
                     📄 Download CV
                 </a>
             </div>
         </div>
+        
     </section>
 <!--skills-->
-<section id="skills" class=" h-full p-12">
+<section id="skills" class=" h-full p-12 bg-black">
     <h1 class="text-4xl font-bold mb-10 underline decoration-solid text-center text-orange-600">Skills</h1>
 
     <!-- Skills Container -->
-    <div id="cont" class=" bg-gray-950   py-32 shadow-md  shadow-orange-700  ">
+    <div id="cont" class=" bg-gray-950  max-w-full py-32 shadow-md pl-14  shadow-orange-700  ">
     <div id="slider" class="slider flex ">
         
             <!-- Skill Item 1 -->
-            <div  class="item rounded-full 
+            <div  class="item rounded-full  
  bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
-                <img src="./src/image/HTML-5-Badge-Logo.png" class=" bg-center w-full h-full object-cover rounded-full" alt="Profile Image">
+                <img src="./src/image/HTML-5-Badge-Logo.png" class="  bg-center w-full h-full object-cover rounded-full" alt="Profile Image">
             </div>
 
             <!-- Skill Item 2 -->
@@ -235,7 +259,7 @@
             <!-- Skill Item 3 -->
             <div  class="item  rounded-full bg-center
   bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
-                <img src="./src/image/css (2).png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
+                <img src="./src/image/css (2).png" class=" w-full h-full object-cover rounded-full" alt="Profile Image">
             </div>
 
             <!-- Skill Item 4 -->
@@ -296,10 +320,10 @@
        </div></div>
 </section>
 <!--projects-->
-    <section id="projects" class="p-20 bg-slate-950">
+    <section id="projects" class=" w-full p-20 bg-black">
         <h1 class="text-4xl font-bold mb-10 underline text-center animate__animated animate__heartBeat text-orange-600">Projects</h1>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 place-items-center animate__animated animate__backInUp">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 place-items-center animate__animated animate__zoomIn">
             <!-- Project Card -->
             <div class="w-64 rounded-lg my-8 overflow-hidden shadow-lg shadow-slate-600  cursor-pointer project-container relative">
                 <img class="w-full h-40 object-cover" src="./src/image/Capture d’écran 2025-02-21 224013.png" alt="FIND_JOB">
@@ -362,7 +386,7 @@
         
     </section>
     
-    <section id="contact" class="bg-slate-950 p-20 flex justify-center">
+    <section id="contact" class="bg-black p-20 flex justify-center">
         <div class="shadow-lg shadow-gray-500 p-14 rounded-lg w-full max-w-3xl bg-white animate__animated animate__shakeX  ">
             <h1 class="text-4xl font-bold mb-2 underline text-center animate__animated animate__heartBeat text-orange-600">Contact</h1>
             <p class="text-center text-gray-500 mb-16">Do not hesitate to contact me.</p>
@@ -395,7 +419,11 @@
     
     
     
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
     
 
     <script>
