@@ -120,62 +120,44 @@
         <!-- Video Background -->
         <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover">
             <source src="./src/video/219749_small.mp4" type="video/mp4">
-          
         </video>
-
+    
         <!-- Navbar -->
-        <nav class="relative z-10 text-white">
-            <div class="container mx-auto flex justify-between items-center p-4">
+        <nav class="relative z-10 text-white bg-black/50 p-4">
+            <div class="container mx-auto flex justify-between items-center">
                 <!-- Logo -->
-                <a href="#" class="text-3xl animate__animated animate__heartBeat text-orange-600 font-extrabold tracking-wide uppercase transition-all duration-300 hover:scale-105 hover:text-orange-700">
+                <a href="#" class="text-2xl md:text-3xl animate__animated animate__heartBeat text-orange-600 font-extrabold tracking-wide uppercase transition-all duration-300 hover:scale-105 hover:text-orange-700">
                     FATI<span class="text-gray-200 font-light">ma</span>
                     <span class="text-gray-400 font-light">zohra</span>
                 </a>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8 font-serif tracking-[.25em] text-lg bg-gray-500/10 px-10 p-2 rounded-lg">
-                    <a href="#home" class="hover:text-gray-400 hover:border-b">Home</a>
-                    <a href="#about" class="hover:text-gray-400 hover:border-b">About</a>
-                    <a href="#skills" class="hover:text-gray-400 hover:border-b">Skills</a>
-                    <a href="#projects" class="hover:text-gray-400 hover:border-b">Projects</a>
-                    <a href="#contact" class="text-orange-600 hover:text-gray-400 hover:border-b">Contact</a>
+    
+                <!-- Small Nav for Mobile -->
+                <div class="flex space-x-4 text-sm md:text-lg font-serif tracking-wide">
+                    <a href="#home" class="hover:text-gray-400">Home</a>
+                    <a href="#about" class="hover:text-gray-400">About</a>
+                    <a href="#skills" class="hover:text-gray-400">Skills</a>
+                    <a href="#projects" class="hover:text-gray-400">Projects</a>
+                    <a href="#contact" class="text-orange-600 hover:text-gray-400">Contact</a>
                 </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="menu-btn" class="md:hidden focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Mobile Menu -->
-            <div id="menu" class="hidden md:hidden flex flex-col space-y-2 text-center pb-4">
-                <a href="#home" class="block p-2 hover:bg-gray-700">Home</a>
-                <a href="#about" class="block p-2 hover:bg-gray-700">About</a>
-                <a href="#skills" class="block p-2 hover:bg-gray-700">Skills</a>
-                <a href="#projects" class="block p-2 hover:bg-gray-700">Projects</a>
-                <a href="#contact" class="block p-2 hover:bg-gray-700">Contact</a>
             </div>
         </nav>
-
-        <!--  Content -->
-        <div class="flex relative z-10 text-white">
-            <div class="w-3/6 text-center p-40 animate__animated animate__backInLeft nimate-delay">
-                <h1 class="text-3xl font-serif">Hi, I'm <span class="font-bold text-orange-600 ">Fatimazohra Zelmati</span></h1>
-                <h2 class="text-orange-600 mb-10 mt-6 text-xl tracking-[.25em] flulls">Fullstack Developer</h2>
-                <p>I craft clean, responsive, and interactive web experiences using<br>
-                    modern technologies. Explore my work and let’s collaborate.</p>
-                <p class="mt-20 animate-bounce">
+    
+        <!-- Content -->
+        <div class="flex flex-col md:flex-row relative z-10 text-white items-center justify-center text-center md:text-left">
+            <div class="md:w-3/6 p-10 text-center md:p-40 animate__animated animate__backInLeft animate-delay">
+                <h1 class="text-3xl font-serif">Hi, I'm <span class="font-bold text-orange-600">Fatimazohra Zelmati</span></h1>
+                <h2 class="text-orange-600 mb-10 mt-6 text-xl tracking-[.25em]">Fullstack Developer</h2>
+                <p>I craft clean, responsive, and interactive web experiences using modern technologies. Explore my work and let’s collaborate.</p>
+                <p class="mt-10 animate-bounce">
                     <a href="#about"><i class="bi bi-arrow-down-circle font-bold text-6xl text-orange-600"></i></a>
                 </p>
             </div>
-
-            <div class="w-2/6 pt-12 animate__animated animate__backInRight animate__slow nimate-delay">
+    
+            <div class="md:w-2/6 pt-12 animate__animated animate__backInRight animate__slow">
                 <img src="./src/image/1703375246286-removebg-preview.png" class="mt-6 p-1 rounded-full">
             </div>
-
-            <div class="flex flex-col space-y-4 mt-40 text-3xl  animate__animated animate__backInRight animate__slow text-gray-600">
+    
+            <div class="flex space-x-6 mt-10 md:mt-40 text-3xl animate__animated animate__backInRight animate__slow text-gray-600">
                 <i class="bi bi-github hover:text-gray-800"></i>
                 <i class="bi bi-linkedin hover:text-blue-500"></i>
                 <i class="bi bi-facebook hover:text-blue-800"></i>
@@ -183,6 +165,7 @@
             </div>
         </div>
     </section>
+    
 
     <!-- About Section (Black Background) -->
     <section id="about" class="relative bg-black text-white py-16 overflow-hidden">
@@ -197,7 +180,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
                 <!-- Profile Image -->
                 <div class="relative flex justify-center" data-aos="zoom-in" data-aos-duration="1500">
-                    <div class="w-80 h-80 rounded-full bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl">
+                    <div class="w-80 h-80 rounded-full bg-gradient-to-tr from-gray-500 to-orange-700 p-1 shadow-xl">
                         <img src="./src/image/170337524628.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
                     </div>
                 </div>
@@ -237,8 +220,8 @@
         
     </section>
 <!--skills-->
-<section id="skills" class=" h-full p-12 bg-black">
-    <h1 class="text-4xl font-bold mb-10 underline decoration-solid text-center text-orange-600">Skills</h1>
+<section id="skills" class=" h-full p-12 bg-black ">
+    <h1 class="text-4xl font-bold mb-32 underline decoration-solid text-center text-orange-600" data-aos="zoom-in" data-aos-duration="1000">Skills</h1>
 
     <!-- Skills Container -->
     <div id="cont" class=" bg-gray-950  max-w-full py-32 shadow-md pl-14  shadow-orange-700  ">
@@ -246,71 +229,71 @@
         
             <!-- Skill Item 1 -->
             <div  class="item rounded-full  
- bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
-                <img src="./src/image/HTML-5-Badge-Logo.png" class="  bg-center w-full h-full object-cover rounded-full" alt="Profile Image">
+ bg-gradient-to-tr from-gray-500 to-orange-700 p-1 shadow-xl ">
+                <img src="./src/image/nvhtml.png" class=" object-scale-down bg-center w-full h-full  rounded-full" alt="Profile Image">
             </div>
 
             <!-- Skill Item 2 -->
             <div  class="item rounded-full bg-center
- bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
-                <img src="./src/image/JS2.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
+ bg-gradient-to-tr from-gray-500 to-orange-700 p-1 shadow-xl ">
+                <img src="./src/image/nvjs.png" class="w-full h-full object-scale-down rounded-full" alt="Profile Image">
             </div>
 
             <!-- Skill Item 3 -->
             <div  class="item  rounded-full bg-center
-  bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
-                <img src="./src/image/css (2).png" class=" w-full h-full object-cover rounded-full" alt="Profile Image">
+  bg-gradient-to-tr from-gray-500 to-orange-700 p-1 shadow-xl ">
+                <img src="./src/image/nvcss.png" class=" w-full h-full object-scale-down rounded-full" alt="Profile Image">
             </div>
 
             <!-- Skill Item 4 -->
             <div  class="item rounded-full bg-center
- bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
-                <img src="./src/image/laravel.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
+ bg-gradient-to-tr from-gray-500 to-orange-700 p-1 shadow-xl ">
+                <img src="./src/image/nvlaravel.png" class="w-full h-full object-scale-down rounded-full" alt="Profile Image">
             </div>
 
             <!-- Skill Item 5 -->
             <div  class="item rounded-full bg-center
- bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
-                <img src="./src/image/MYSQL.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
+ bg-gradient-to-tr from-gray-500 to-orange-700 p-1 shadow-xl ">
+                <img src="./src/image/nvmysql.png" class="w-full h-full object-scale-down rounded-full" alt="Profile Image">
             </div>
 
             <!-- Skill 6 -->
-            <div  class="item rounded-full bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
-                <img src="./src/image/react.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
+            <div  class="item rounded-full bg-gradient-to-tr from-gray-500 to-orange-700 p-1 shadow-xl ">
+                <img src="./src/image/react.png" class="w-full h-full object-scale-down rounded-full" alt="Profile Image">
             </div>
           <!-- Skill Item 7 -->
           <div  class="item rounded-full 
-          bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
-                         <img src="./src/image/Capture d’écran 2025-02-20 201705.png" class=" bg-centerw-full h-full object-cover rounded-full" alt="Profile Image">
+          bg-gradient-to-tr from-gray-500 to-orange-700 p-1 shadow-xl ">
+                         <img src="./src/image/nvstudioc.png" class=" bg-centerw-full h-full object-scale-down rounded-full" alt="Profile Image">
                      </div>
          
                      <!-- Skill Item 8 -->
                      <div  class="item rounded-full bg-center
-          bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
-                         <img src="./src/image/gitt.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
+          bg-gradient-to-tr from-gray-500 to-orange-700 p-1 shadow-xl ">
+                         <img src="./src/image/nvgit.png" class="w-full h-full object-scale-down rounded-full" alt="Profile Image">
                      </div>
          
                      <!-- Skill Item 9 -->
                      <div  class="item  rounded-full bg-center
-           bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
-                         <img src="./src/image/Capture d’écran 2025-02-20 201906.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
+           bg-gradient-to-tr from-gray-500 to-orange-700 p-1 shadow-xl ">
+                         <img src="./src/image/nvphp.png" class="w-full h-full object-scale-down rounded-full" alt="Profile Image">
                      </div>
          
                      <!-- Skill Item 10 -->
                      <div  class="item rounded-full bg-center
-          bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
-                         <img src="./src/image/PYTHON.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
+          bg-gradient-to-tr from-gray-500 to-orange-700 p-1 shadow-xl ">
+                         <img src="./src/image/nvpython.png" class="w-full h-full object-scale-down rounded-full" alt="Profile Image">
                      </div>
          
                      <!-- Skill Item 11 -->
                      <div  class="item rounded-full bg-center
-          bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
-                         <img src="./src/image/microsoft.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
+          bg-gradient-to-tr from-gray-500 to-orange-700 p-1 shadow-xl ">
+                         <img src="./src/image/nvoffice.png" class="w-full h-full object-scale-down rounded-full" alt="Profile Image">
                      </div>
          
                      <!-- Skill 12 -->
-                     <div  class="item rounded-full bg-gradient-to-tr from-orange-600 to-gray-800 p-1 shadow-xl ">
-                         <img src="./src/image/Capture d’écran 2025-02-20 210223.png" class="w-full h-full object-cover rounded-full" alt="Profile Image">
+                     <div  class="item rounded-full bg-gradient-to-tr from-gray-500 to-orange-700 p-1 shadow-xl ">
+                         <img src="./src/image/nvmongo.png" class="w-full h-full object-scale-down rounded-full" alt="Profile Image">
                      </div>
     </div>
     <div class="buttons text-white text-center text-4xl  p-20 ">
@@ -323,7 +306,7 @@
     <section id="projects" class=" w-full p-20 bg-black">
         <h1 class="text-4xl font-bold mb-10 underline text-center animate__animated animate__heartBeat text-orange-600">Projects</h1>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 place-items-center animate__animated animate__zoomIn">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 place-items-center" data-aos="zoom-in" data-aos-duration="1000">
             <!-- Project Card -->
             <div class="w-64 rounded-lg my-8 overflow-hidden shadow-lg shadow-slate-600  cursor-pointer project-container relative">
                 <img class="w-full h-40 object-cover" src="./src/image/Capture d’écran 2025-02-21 224013.png" alt="FIND_JOB">
@@ -388,7 +371,7 @@
     
     <section id="contact" class="bg-black p-20 flex justify-center">
         <div class="shadow-lg shadow-gray-500 p-14 rounded-lg w-full max-w-3xl bg-white animate__animated animate__shakeX  ">
-            <h1 class="text-4xl font-bold mb-2 underline text-center animate__animated animate__heartBeat text-orange-600">Contact</h1>
+            <h1 class="text-4xl font-bold my-32 mb-2 underline text-center animate__animated animate__heartBeat text-orange-600">Contact</h1>
             <p class="text-center text-gray-500 mb-16">Do not hesitate to contact me.</p>
             
             <form>
@@ -419,7 +402,9 @@
     
     
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js">
+        
+    </script>
 <script>
     AOS.init();
 </script>
